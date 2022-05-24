@@ -3,7 +3,7 @@ name = "quickselect"
 version = "0.1.0"
 edition = "2018"
 authors = ["user <free_gis@qq.com>"]
-license = "BSD 3-Clause License"
+license = "BSD 3-Clause "New" or "Revised" license"
 description = "基于rust的选择算法"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
