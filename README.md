@@ -1,4 +1,4 @@
-# quickselect-rs
+# quickselect
 基于rust的选择算法。
 ## API
 ```
