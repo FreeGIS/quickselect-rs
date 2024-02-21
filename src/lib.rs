@@ -30,7 +30,6 @@ mod tests {
         );
     }
 }
-use num::Num;
 use std::cmp::PartialOrd;
 /// 选择算法
 ///
@@ -43,7 +42,7 @@ use std::cmp::PartialOrd;
 /// quick_select(&mut test_arr,8,0,length-1,true);
 /// assert_eq!(test_arr,vec![39.0, 28.0, 28.0, 33.0, 21.0, 12.0, 22.0, 50.0, 53.0, 56.0, 59.0, 65.0, 90.0, 77.0, 95.0]);
 /// ```
-pub fn quick_select<N: Num + Copy + PartialOrd>(
+pub fn quick_select<N: Copy + PartialOrd>(
     arr: &mut Vec<N>,
     k: usize,
     mut left: usize,
@@ -71,7 +70,7 @@ pub fn quick_select<N: Num + Copy + PartialOrd>(
             new_right = if right < new_right { right } else { new_right };
             quick_select(arr, k, new_left, new_right, is_left_smallest);
         }
-        let t = arr[k];
+        let t: N = arr[k];
         let mut i = left;
         let mut j = right;
         arr.swap(left, k);
@@ -106,7 +105,7 @@ pub fn quick_select<N: Num + Copy + PartialOrd>(
     }
 }
 
-fn left_smallest_compare<N: Num + PartialOrd>(a: N, b: N) -> i32 {
+fn left_smallest_compare<N: PartialOrd>(a: N, b: N) -> i32 {
     if a < b {
         -1
     } else {
@@ -118,7 +117,7 @@ fn left_smallest_compare<N: Num + PartialOrd>(a: N, b: N) -> i32 {
     }
 }
 
-fn left_bigest_compare<N: Num + PartialOrd>(a: N, b: N) -> i32 {
+fn left_bigest_compare<N: PartialOrd>(a: N, b: N) -> i32 {
     if a < b {
         1
     } else {
